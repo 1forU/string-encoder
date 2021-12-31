@@ -44,7 +44,8 @@ class Convert implements ConvertWriteInterface, ConvertReadInterface
     public function __construct(
         ?EncodingDTOInterface $sourceEncoding = null,
         ?EncodingDTOInterface $targetEncoding = null,
-        ?OptionsInterface $options = null)
+        ?OptionsInterface $options = null
+    )
     {
         if ($options === null) {
             $options = new Options();
@@ -130,7 +131,7 @@ class Convert implements ConvertWriteInterface, ConvertReadInterface
     /**
      * @throws InvalidEncodingException
      */
-    private function convert(string $value): void
+    public function convert(string $value): void
     {
         if ($this->sourceEncoding === null) {
             $value = \mb_convert_encoding($value, $this->targetEncoding->getEncoding());
