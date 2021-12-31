@@ -1,9 +1,9 @@
 {
-    "name": "paquettg/string-encode",
+    "name": "1foru/string-encode",
     "type": "library",
     "description": "Facilitating the process of altering string encoding in PHP.",
     "keywords": ["encoding", "charset", "string"],
-    "homepage": "https://github.com/paquettg/string-encoder",
+    "homepage": "https://github.com/1foru/string-encoder",
     "license": "MIT",
     "authors": [
         {
