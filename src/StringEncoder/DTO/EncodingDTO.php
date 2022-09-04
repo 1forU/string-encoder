@@ -32,7 +32,7 @@ final class EncodingDTO implements EncodingDTOInterface
             $options = new Options();
         }
 
-        if (!$validator->validateEncoding($encoding, $options->isCaseSensitiveEncoding())) {
+        if (!$validator->validateEncoding(strtoupper($encoding), $options->isCaseSensitiveEncoding())) {
             throw new InvalidEncodingException('Encoding "' . $encoding . '" is not supported by this system.');
         }
         if (!$options->isCaseSensitiveEncoding()) {
