@@ -22,6 +22,10 @@ class Validator
     public function determineEncoding(string $encoding, bool $caseSensitive): ?string
     {
         $encodingList = \mb_list_encodings();
+	    
+	    if (PHP_VERSION_ID >= 80200) {
+		    $encodingList = array_diff($encodingList, ['BASE64', 'UUENCODE', 'HTML-ENTITIES', 'Quoted-Printable']);
+	    }
 
         foreach ($encodingList as $validEncoding) {
             if ($validEncoding === $encoding || (
